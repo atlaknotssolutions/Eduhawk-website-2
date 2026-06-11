@@ -256,26 +256,23 @@ export default function Landingpage() {
     }
 
     try {
-      const response = await fetch(
-        "https://eduhawk-server-2.onrender.com/api/contact/create",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: formData.name.trim(),
-            email: formData.email.trim().toLowerCase(),
-            phone: formData.phone.trim() || undefined,
-            subject: formData.subject,
-            country: formData.country || undefined,
-            message:
-              formData.message.trim() +
-              (formData.country
-                ? `\n\nPreferred Country: ${formData.country}`
-                : ""),
-            captcha: captchaToken,
-          }),
-        },
-      );
+      const response = await fetch("http://localhost:8000/api/contact/create", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim().toLowerCase(),
+          phone: formData.phone.trim() || undefined,
+          subject: formData.subject,
+          country: formData.country || undefined,
+          message:
+            formData.message.trim() +
+            (formData.country
+              ? `\n\nPreferred Country: ${formData.country}`
+              : ""),
+          captcha: captchaToken,
+        }),
+      });
 
       const data = await response.json();
 
@@ -682,74 +679,77 @@ export default function Landingpage() {
 
       {/* <!-- Who We Are Section --> */}
       <div className="bg-white py-16">
-       <div className="max-w-7xl mx-auto px-6">
-  <div className="grid md:grid-cols-2 gap-12 items-center">
-    {/* Left Side - Video */}
-    <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video bg-black">
-      <iframe
-        className="absolute inset-0 w-full h-full"
-        src="https://www.youtube.com/embed/qyTUxmWeeUs?si=1JixL-Pr2GEv7hML"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      ></iframe>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Video */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video bg-black">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/qyTUxmWeeUs?si=1JixL-Pr2GEv7hML"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
 
-      {/* Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none"></div>
-    </div>
+              {/* Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none"></div>
+            </div>
 
-    {/* Right Side - Content */}
-    <div className="space-y-6">
-      <div>
-        <span className="text-blue-600 font-medium text-sm tracking-widest">
-          WHO WE ARE
-        </span>
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mt-2">
-          Empowering Medical Aspirations Globally
-        </h2>
-      </div>
+            {/* Right Side - Content */}
+            <div className="space-y-6">
+              <div>
+                <span className="text-blue-600 font-medium text-sm tracking-widest">
+                  WHO WE ARE
+                </span>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mt-2">
+                  Empowering Medical Aspirations Globally
+                </h2>
+              </div>
 
-      <div className="text-lg text-gray-600 leading-relaxed space-y-5">
-        <p>
-          Established in <strong>2020</strong>, Edu Hawk helps students who missed
-          the opportunity to study medicine in India pursue their dreams abroad.
-        </p>
+              <div className="text-lg text-gray-600 leading-relaxed space-y-5">
+                <p>
+                  Established in <strong>2020</strong>, Edu Hawk helps students
+                  who missed the opportunity to study medicine in India pursue
+                  their dreams abroad.
+                </p>
 
-        <p>
-          We focus on{" "}
-          <strong>quality, cost-effectiveness, safety, and trust</strong>. Our
-          experienced team supports students at every step.
-        </p>
-      </div>
+                <p>
+                  We focus on{" "}
+                  <strong>
+                    quality, cost-effectiveness, safety, and trust
+                  </strong>
+                  . Our experienced team supports students at every step.
+                </p>
+              </div>
 
-      {/* View More Button */}
-      <div className="pt-4">
-        <button
-          onClick={() => setShowMoreContent(!showMoreContent)}
-          className="bg-red-600 hover:bg-red-700 text-white font-semibold text-lg px-10 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-3 group"
-        >
-          {showMoreContent ? "View Less" : "View More"}
-          <span
-            className={`text-xl transition-transform group-hover:translate-x-1 ${
-              showMoreContent ? "rotate-180" : ""
-            }`}
-          >
-            →
-          </span>
-        </button>
+              {/* View More Button */}
+              <div className="pt-4">
+                <button
+                  onClick={() => setShowMoreContent(!showMoreContent)}
+                  className="bg-red-600 hover:bg-red-700 text-white font-semibold text-lg px-10 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-3 group"
+                >
+                  {showMoreContent ? "View Less" : "View More"}
+                  <span
+                    className={`text-xl transition-transform group-hover:translate-x-1 ${
+                      showMoreContent ? "rotate-180" : ""
+                    }`}
+                  >
+                    →
+                  </span>
+                </button>
 
-        {showMoreContent && (
-          <div className="text-lg text-gray-600 leading-relaxed space-y-5 pt-6 border-t border-gray-200 mt-6">
-            Embracing digital transformation, we provide seamless online services
-            with personalized and committed guidance.
+                {showMoreContent && (
+                  <div className="text-lg text-gray-600 leading-relaxed space-y-5 pt-6 border-t border-gray-200 mt-6">
+                    Embracing digital transformation, we provide seamless online
+                    services with personalized and committed guidance.
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
-        )}
-      </div>
-    </div>
-  </div>
-</div>
+        </div>
       </div>
 
       <div class="relative bg-gradient-to-br from-cyan-600 to-violet-700  text-white overflow-hidden py-16 md:py-24">
@@ -757,8 +757,6 @@ export default function Landingpage() {
         <div class="absolute inset-0 bg-[radial-gradient(#ffffff20_1px,transparent_1px)] [background-size:40px_40px] opacity-30"></div>
 
         <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
-         
-         
           <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Talk to our Experts
           </h1>

@@ -197,9 +197,9 @@ export default function Footer() {
   </p>
   <p className="mt-1">
     Powered By{" "}
-    <a href="https://www.atlaknots.com/" target="_blank" rel="noopener noreferrer">
+    <a href="http://aiknotsit.com/" target="_blank" rel="noopener noreferrer">
       <span className="font-small text-gray-400">
-        AtlaKnots IT Solution
+        AI Knots IT Solution Pvt. Ltd.
       </span>
     </a>
     • 

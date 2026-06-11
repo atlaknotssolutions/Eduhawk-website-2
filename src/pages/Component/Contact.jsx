@@ -76,21 +76,18 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch(
-        "https://eduhawk-server-2.onrender.com/api/contact/create",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: `${formData.firstName} ${formData.lastName}`.trim(),
-            email: formData.email,
-            phone: formData.phone || undefined,
-            subject: formData.subject,
-            message: formData.message,
-            captcha: captchaToken,
-          }),
-        },
-      );
+      const response = await fetch("http://localhost:8000/api/contact/create", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.lastName}`.trim(),
+          email: formData.email,
+          phone: formData.phone || undefined,
+          subject: formData.subject,
+          message: formData.message,
+          captcha: captchaToken,
+        }),
+      });
 
       const data = await response.json();
 

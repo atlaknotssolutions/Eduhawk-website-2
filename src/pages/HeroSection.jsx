@@ -180,7 +180,7 @@ export default function HeroSection() {
   const [isContactSubmitting, setIsContactSubmitting] = useState(false);
   const [exploreMenuOpen, setExploreMenuOpen] = useState(false);
   const exploreMenuRef = useRef(null);
- const navigate = useNavigate();
+  const navigate = useNavigate();
   // Toast Notification Functions
   const showSuccess = (message) => {
     toast.success(message, {
@@ -207,14 +207,11 @@ export default function HeroSection() {
 
   // Shared API call
   const submitToApi = async (payload) => {
-    const res = await fetch(
-      "https://eduhawk-server-2.onrender.com/api/query/create",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      },
-    );
+    const res = await fetch("http://localhost:8000/api/query/create", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
     return res.json();
   };
 
@@ -871,16 +868,16 @@ export default function HeroSection() {
                       With our assistance, you can bid farewell to the
                       complexities often associated with
                       <strong className="text-[#0a2342] font-semibold hover:text-[#426a91] transition-colors duration-200 p-2">
-                       <button onClick={() => navigate("/mbbs-abroad/russia")}
-                       className="hover:text-[#426a91] transition-colors duration-200"
-                       >
+                        <button
+                          onClick={() => navigate("/mbbs-abroad/russia")}
+                          className="hover:text-[#426a91] transition-colors duration-200"
+                        >
                           MBBS admission abroad
-                    </button>    
+                        </button>
                       </strong>
                       We streamline the entire process, sparing you from any
                       unnecessary hassle and ensuring a seamless experience
                       every step of the way.
-
                     </p>
                     <footer className="text-gray-500 text-sm not-italic">
                       Trust us to be your reliable partner in realizing your
@@ -1017,75 +1014,75 @@ export default function HeroSection() {
             ))}
           </div>
         </div> */}
-<div className="container mx-auto px-4 py-16">
-  <h4 className="text-3xl font-bold text-center text-gray-800 mb-10">
-    TOP MEDICAL COLLEGES
-  </h4>
+        <div className="container mx-auto px-4 py-16">
+          <h4 className="text-3xl font-bold text-center text-gray-800 mb-10">
+            TOP MEDICAL COLLEGES
+          </h4>
 
-  <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6">
-    {[
-      {
-        name: "Altai State Medical University",
-        img: topRanking2,
-        path: "/mbbs-abroad/russia",
-      },
-      {
-        name: "Dhaka National Medical College",
-        img: "https://educationvibes.in/uploads/university_banner/mbbs_abroad/dhaka-national-medical-college.webp",
-        path: "/mbbs-abroad/bangladesh",
-      },
-      {
-        name: "Kathmandu Medical College",
-        img: "https://careeradvice.in/mbbs-abroad/wp-content/uploads/2021/12/featured-kathmandu-medical-images.png",
-        path: "/mbbs-abroad/nepal",
-      },
-      {
-        name: "International Medical College",
-        img: "https://upload.wikimedia.org/wikipedia/commons/b/b9/International_higher_school_of_medicine_central_campus.jpg",
-        path: "/mbbs-abroad/kyrgyzstan",
-      },
-      {
-        name: "West Kazakhstan Marat Ospanov State Medical University",
-        img: topRanking4,
-        path: "mbbs-abroad/kazakhstan",
-      },
-      {
-        name: "Samarkand State Medical Institute",
-        img: "https://www.moksh16.com/uploads/images/samarkand1.webp",
-        path: "/mbbs-abroad/russia/pirogov-university",
-      },
-      {
-        name: "Tajik National University",
-        img: "https://upload.wikimedia.org/wikipedia/commons/3/36/Tajik_National_University_%28Main_Building%29.jpg",
-        path: "/mbbs-abroad/tajikistan",
-      },
-      {
-        name: "Assiut University",
-        img: "https://oktamam.com/wp-content/uploads/2024/03/assiut-university.png",
-        path: "/mbbs-abroad/egypt",
-      },
-    ].map((college, index) => (
-      <Link
-        key={index}
-        to={college.path}
-        className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 block"
-      >
-        <img
-          src={college.img}
-          alt={college.name}
-          className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-          <div className="p-4 w-full">
-            <p className="text-white font-medium text-sm hover:underline line-clamp-2">
-              {college.name}
-            </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            {[
+              {
+                name: "Altai State Medical University",
+                img: topRanking2,
+                path: "/mbbs-abroad/russia",
+              },
+              {
+                name: "Dhaka National Medical College",
+                img: "https://educationvibes.in/uploads/university_banner/mbbs_abroad/dhaka-national-medical-college.webp",
+                path: "/mbbs-abroad/bangladesh",
+              },
+              {
+                name: "Kathmandu Medical College",
+                img: "https://careeradvice.in/mbbs-abroad/wp-content/uploads/2021/12/featured-kathmandu-medical-images.png",
+                path: "/mbbs-abroad/nepal",
+              },
+              {
+                name: "International Medical College",
+                img: "https://upload.wikimedia.org/wikipedia/commons/b/b9/International_higher_school_of_medicine_central_campus.jpg",
+                path: "/mbbs-abroad/kyrgyzstan",
+              },
+              {
+                name: "West Kazakhstan Marat Ospanov State Medical University",
+                img: topRanking4,
+                path: "mbbs-abroad/kazakhstan",
+              },
+              {
+                name: "Samarkand State Medical Institute",
+                img: "https://www.moksh16.com/uploads/images/samarkand1.webp",
+                path: "/mbbs-abroad/russia/pirogov-university",
+              },
+              {
+                name: "Tajik National University",
+                img: "https://upload.wikimedia.org/wikipedia/commons/3/36/Tajik_National_University_%28Main_Building%29.jpg",
+                path: "/mbbs-abroad/tajikistan",
+              },
+              {
+                name: "Assiut University",
+                img: "https://oktamam.com/wp-content/uploads/2024/03/assiut-university.png",
+                path: "/mbbs-abroad/egypt",
+              },
+            ].map((college, index) => (
+              <Link
+                key={index}
+                to={college.path}
+                className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 block"
+              >
+                <img
+                  src={college.img}
+                  alt={college.name}
+                  className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 w-full">
+                    <p className="text-white font-medium text-sm hover:underline line-clamp-2">
+                      {college.name}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
-      </Link>
-    ))}
-  </div>
-</div>
         {/* CLASSROOM CARDS */}
         <section className="py-12 md:py-16 bg-gray-50">
           <div className="container mx-auto px-5 sm:px-6 lg:px-8 max-w-7xl">

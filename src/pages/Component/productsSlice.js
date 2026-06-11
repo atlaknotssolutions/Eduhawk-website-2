@@ -5,7 +5,7 @@
 //   "products/fetchProducts",
 //   async (_, { rejectWithValue }) => {
 //     try {
-//       const res = await fetch("https://eduhawk-server-2.onrender.com/api/product");
+//       const res = await fetch("http://localhost:8000/api/product");
 
 //       if (!res.ok) {
 //         throw new Error(`HTTP ${res.status} – ${res.statusText}`);
@@ -32,7 +32,7 @@
 //   "products/fetchProductById",
 //   async (id, { rejectWithValue }) => {
 //     try {
-//       const res = await fetch(`https://eduhawk-server-2.onrender.com/api/product/${id}`);
+//       const res = await fetch(`http://localhost:8000/api/product/${id}`);
 
 //       if (!res.ok) {
 //         throw new Error(`HTTP ${res.status} – ${res.statusText}`);
@@ -196,9 +196,7 @@ export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await fetch(
-        "https://eduhawk-server-2.onrender.com/api/product",
-      );
+      const res = await fetch("http://localhost:8000/api/product");
 
       if (!res.ok) {
         throw new Error(`HTTP ${res.status} – ${res.statusText}`);
@@ -230,9 +228,9 @@ export const fetchProductBySlugOrId = createAsyncThunk(
     }
 
     const endpointCandidates = [
-      `https://eduhawk-server-2.onrender.com/api/blog/${target}`,
-      `https://eduhawk-server-2.onrender.com/api/product/${target}`,
-      `https://eduhawk-server-2.onrender.com/api/product/slug/${target}`,
+      `http://localhost:8000/api/blog/${target}`,
+      `http://localhost:8000/api/product/${target}`,
+      `http://localhost:8000/api/product/slug/${target}`,
     ];
 
     const fetchCandidate = async (url) => {
