@@ -256,23 +256,26 @@ export default function Landingpage() {
     }
 
     try {
-      const response = await fetch("http://localhost:8000/api/contact/create", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.name.trim(),
-          email: formData.email.trim().toLowerCase(),
-          phone: formData.phone.trim() || undefined,
-          subject: formData.subject,
-          country: formData.country || undefined,
-          message:
-            formData.message.trim() +
-            (formData.country
-              ? `\n\nPreferred Country: ${formData.country}`
-              : ""),
-          captcha: captchaToken,
-        }),
-      });
+      const response = await fetch(
+        "https://api.eduhawk.in/api/contact/create",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formData.name.trim(),
+            email: formData.email.trim().toLowerCase(),
+            phone: formData.phone.trim() || undefined,
+            subject: formData.subject,
+            country: formData.country || undefined,
+            message:
+              formData.message.trim() +
+              (formData.country
+                ? `\n\nPreferred Country: ${formData.country}`
+                : ""),
+            captcha: captchaToken,
+          }),
+        },
+      );
 
       const data = await response.json();
 

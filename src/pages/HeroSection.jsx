@@ -207,7 +207,7 @@ export default function HeroSection() {
 
   // Shared API call
   const submitToApi = async (payload) => {
-    const res = await fetch("http://localhost:8000/api/query/create", {
+    const res = await fetch("https://api.eduhawk.in/api/query/create", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
