@@ -61,6 +61,24 @@ const TESTIMONIALS = [
   },
 ];
 
+const FAQ_ITEMS = [
+  {
+    question: "How can I study MBBS abroad with low fees?",
+    answer:
+      "Edu-Hawk helps students compare affordable MBBS options in countries like Russia, Georgia, Uzbekistan, Kazakhstan, Kyrgyzstan and Nepal based on fees, eligibility, and career goals.",
+  },
+  {
+    question: "What guidance do you provide for MBBS admission abroad?",
+    answer:
+      "We provide step-by-step counselling for university selection, application support, documentation, visa guidance, and pre-departure preparation for overseas education.",
+  },
+  {
+    question: "Is MBBS abroad a good option for Indian students?",
+    answer:
+      "Yes, many Indian students choose foreign medical universities for quality medical education, internationally recognized programs, and cost-effective study options in lakhs.",
+  },
+];
+
 const HERO_SLIDES = [
   {
     image:
@@ -297,15 +315,15 @@ export default function HeroSection() {
     <>
       <Helmet>
         <title>
-          MBBS Abroad for Indian Students | MBBS Admission Abroad 2026
+          Study MBBS Abroad in Russia, Georgia, Uzbekistan | Edu-Hawk Guidance
         </title>
         <meta
           name="description"
-          content="MBBS abroad for Indian students at low cost in top countries. Get complete guidance on MBBS admission abroad, eligibility, fees, and top medical universities."
+          content="Study MBBS abroad with expert guidance, affordable fees in lakhs, and trusted counselling for MBBS admission abroad in Russia, Georgia, Uzbekistan, Kazakhstan, Kyrgyzstan and more."
         />
         <meta
           name="keywords"
-          content="MBBS abroad, mbbs abroad for indian students, mbbs admission abroad, study mbbs abroad, mbbs abroad fees, mbbs consultancy"
+          content="study mbbs abroad, mbbs abroad, mbbs admission abroad, mbbs counselling, medical education abroad, overseas education, foreign medical universities, guidance, lakhs study mbbs, study mbbs"
         />
       </Helmet>
 
@@ -1175,6 +1193,86 @@ export default function HeroSection() {
               hostel, and other charges. Always verify latest information from
               official sources.
             </p>
+          </div>
+        </section>
+
+        {/* SEO CONTENT SECTION */}
+        <section className="py-16 md:py-20 px-5 sm:px-8 lg:px-12 bg-[#f8fafc]">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10 md:mb-12">
+              <p className="text-[#d4a853] uppercase tracking-widest text-xs md:text-sm font-medium mb-4">
+                MBBS Abroad Guidance
+              </p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0a2342] mb-4">
+                Study MBBS Abroad with Expert Guidance
+              </h2>
+              <p className="text-gray-600 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+                Edu-Hawk Worldwide helps Indian students plan their MBBS journey
+                with transparent counselling, trusted university advice, and
+                affordable study options in lakhs for medical education abroad.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <h3 className="text-xl font-semibold text-[#0a2342] mb-3">
+                  MBBS Admission Abroad
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Get support for MBBS admission abroad with eligibility
+                  guidance, university shortlisting, and application assistance.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <h3 className="text-xl font-semibold text-[#0a2342] mb-3">
+                  Medical Education Overseas
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Explore medical education opportunities in foreign medical
+                  universities with recognized programs and strong academic
+                  support.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <h3 className="text-xl font-semibold text-[#0a2342] mb-3">
+                  Overseas Education for Indian Students
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  We simplify overseas education for Indian students with
+                  guidance on country selection, fees, and admission processes.
+                </p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <h3 className="text-xl font-semibold text-[#0a2342] mb-3">
+                  Affordable Study in Lakhs
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Compare cost-effective MBBS options in lakhs and choose the
+                  right path for your budget and career goals.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
+              <h3 className="text-2xl font-bold text-[#0a2342] mb-6">
+                FAQs About MBBS Abroad and Study Guidance
+              </h3>
+              <div className="space-y-4">
+                {FAQ_ITEMS.map((item, index) => (
+                  <div
+                    key={index}
+                    className="border border-gray-200 rounded-xl p-4"
+                  >
+                    <h4 className="font-semibold text-[#0a2342] mb-2">
+                      {item.question}
+                    </h4>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
