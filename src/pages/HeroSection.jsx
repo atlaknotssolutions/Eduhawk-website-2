@@ -315,11 +315,11 @@ export default function HeroSection() {
     <>
       <Helmet>
         <title>
-          Study MBBS Abroad in Russia, Georgia, Uzbekistan | Edu-Hawk Guidance
+          Study MBBS Abroad | Expert Guidance | Edu-Hawk
         </title>
         <meta
           name="description"
-          content="Study MBBS abroad with expert guidance, affordable fees in lakhs, and trusted counselling for MBBS admission abroad in Russia, Georgia, Uzbekistan, Kazakhstan, Kyrgyzstan and more."
+          content="Study MBBS abroad with expert guidance, affordable fees, and trusted admission support in Russia, Georgia, Uzbekistan, Kazakhstan & Kyrgyzstan."
         />
         <meta
           name="keywords"
