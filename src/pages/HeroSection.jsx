@@ -315,7 +315,7 @@ export default function HeroSection() {
     <>
       <Helmet>
         <title>
-          Study MBBS Abroad | Expert Guidance | Edu-Hawk
+          MBBS Abroad Guidance | Indian Students Admission 2026
         </title>
         <meta
           name="description"
