@@ -28,3 +28,21 @@ MBBS abroad, study MBBS abroad, MBBS admission abroad, MBBS counselling, medical
 
 ## Brand Summary
 Edu-Hawk Worldwide helps Indian students plan safe, transparent, and affordable MBBS journeys abroad with trusted counselling and complete support from application to arrival.
+
+## Compromised Sites Policy Summary
+A compromised site is a destination whose code has been manipulated to act in ways that benefit a third party without the site owner’s knowledge, often harming users.
+
+### Common violations
+- Hijacked or hacked destinations
+- Scripts or code that transmit user data without consent
+- Malware installation on end-user devices
+- Pop-up ad injection or unauthorised redirects
+- Use of content management systems with known security vulnerabilities that have been exploited
+
+### Recommended fixes
+- Review the disapproval reason in Google Ads and identify the affected domain
+- Remove any malicious or unauthorised code from the site
+- Check the site using Google Safe Browsing and Search Console security reports
+- Update CMS, themes, and plugins to the latest secure versions
+- If the site cannot be fixed, update the ad to a compliant destination
+- Appeal the decision after the issue has been resolved
